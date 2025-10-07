@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vehicle Detection</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            width: 90%;
+            max-width: 700px;
+            margin: 40px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        input[type="file"] {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px dashed #bbb;
+            border-radius: 8px;
+            padding: 10px;
+            width: 80%;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #16a085;
+        }
+        h3, h4 {
+            color: #ffcc70;
+        }
+        .image-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        .image-box {
+            margin: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            width: 300px;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<header>VEHICLE DETECTION </header>
+
+<div class="container">
+    <h2>Upload an Image to Detect Vehicles</h2>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <br>
+        <input type="submit" value="Run Detection">
+    </form>
+
+    <div class="result">
+        <h3>{{ prediction_text or "" }}</h3>
+    </div>
+
+    <div class="image-section">
+        {% if input_image %}
+        <div class="image-box">
+            <h4>Original Image</h4>
+            <img src="{{ url_for('send_file', filename=input_image) }}" alt="Original Image">
+        </div>
+        {% endif %}
+
+        {% if output_image %}
+        <div class="image-box">
+            <h4>Detected Image</h4>
+            <img src="{{ url_for('send_file', filename=output_image) }}" alt="Detected Image">
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<footer>
+    Developed using YOLOv10 & Flask | © 2025
+</footer>
+
+</body>
+</html>
