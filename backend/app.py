@@ -1,6 +1,7 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
-from backend.Model_Detection import detection
+from Model_Detection import detection
+
 
 app = FastAPI()
 

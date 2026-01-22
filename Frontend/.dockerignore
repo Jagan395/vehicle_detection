@@ -1,0 +1,12 @@
+myenv/
+__pycache__/
+backend/
+__pycache__/
+app.py/
+Model_Detection.py/
+best_yolo.pt/
+static/uploads/
+.git/
+.gitignore
+Training_Model/
+vehicle-detection.ipynb
