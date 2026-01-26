@@ -8,7 +8,7 @@ from collections import Counter
 import os
 
 # ================= CONFIG =================
-API_URL = os.getenv("API_URL", "http://backend:8000/detect")
+API_URL = os.getenv("API_URL", "http://13.234.255.131:8000/detect")
 
 st.set_page_config(
     page_title="Vehicle Detection System",
