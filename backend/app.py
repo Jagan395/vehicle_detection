@@ -1,5 +1,4 @@
 from fastapi import FastAPI, File, UploadFile
-from fastapi.responses import JSONResponse
 from Model_Detection import detection
 
 
@@ -12,4 +11,4 @@ def home():
 @app.post("/detect")
 async def detect_objects(file: UploadFile = File(...)):
     result = detection(file)
-    return JSONResponse(content=result)
+    return result

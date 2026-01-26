@@ -1,0 +1,9 @@
+__pycache__/
+myenv/
+frontend/
+ui.py/
+static/uploads/
+Training_Model/
+vehicle-detection.ipynb/
+.git/
+.gitignore/
