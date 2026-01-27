@@ -1,5 +1,7 @@
 # Vehicle Detection from Aerial Drone Images :
-    An end-to-end vehicle detection system designed for aerial drone imagery, capable of identifying vehicles in high-resolution overhead images <br>
+
+
+An end-to-end vehicle detection system designed for aerial drone imagery, capable of identifying vehicles in high-resolution overhead images <br>
 The application uses a deep learning–based object detection model served through a FastAPI backend and an interactive frontend UI, fully containerized using Docker.<br>
 This project addresses challenges unique to aerial imagery such as small object sizes, scale variation, dense scenes, and occlusions.
 
